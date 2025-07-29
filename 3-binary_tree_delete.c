@@ -3,7 +3,7 @@
 #include "binary_trees.h"
 
 /**
- * binnary_tree_delete - delete binary tree
+ * binary_tree_delete - delete binary tree
  * @tree: pointer
  *
  * Return: Nothing
