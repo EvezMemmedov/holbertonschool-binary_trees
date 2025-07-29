@@ -3,7 +3,7 @@
 #include "binary_trees.h"
 
 /**
- * binary_tree_insert_left - that inserts a node as the left-child of another node
+ * binary_tree_insert_left - inserts left-child of node
  * @parent: parent of tree
  * @value: value of tree
  *
