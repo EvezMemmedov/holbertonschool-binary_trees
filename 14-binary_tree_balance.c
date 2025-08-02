@@ -3,23 +3,24 @@
 #include "binary_trees.h"
 
 /**
- * binary_tree_balance - balance factor of a binary tree
- * @tree: pointer
+ * binary_tree_balance - measures the balance factor of a binary tree
+ * @tree: pointer to the root node of the tree to measure
  *
- * Return: balance factor
+ * Return: balance factor (left subtree height - right subtree height)
+ *         or 0 if tree is NULL
  */
 int binary_tree_balance(const binary_tree_t *tree)
 {
-	int left_side = 0;
-	int right_side = 0;
+	int left_height = 0, right_height = 0;
 
 	if (tree == NULL)
 		return (0);
-	if (tree->left == NULL && tree->right == NULL)
-		return (0);
 
-	left_side = binary_tree_balance(tree->left);
-	right_side = binary_tree_balance(tree->right);
+	if (tree->left)
+		left_height = (int)binary_tree_height(tree->left) + 1;
 
-	return (left_side - right_side);
+	if (tree->right)
+		right_height = (int)binary_tree_height(tree->right) + 1;
+
+	return (left_height - right_height);
 }
